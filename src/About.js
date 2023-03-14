@@ -3,7 +3,7 @@ import { UserContext } from './UserContext';
 import { Link } from "react-router-dom";
 
 const About = () => {
-  const msg = useContext(UserContext);
+  const { value, setValue } = useContext(UserContext);
   return  (
     <div>
       <nav>
@@ -17,7 +17,7 @@ const About = () => {
         </ul>
       </nav>
       <h1>About</h1>
-      <div>{msg}</div>
+      <div>{value}</div>
     </div>
   );
     
