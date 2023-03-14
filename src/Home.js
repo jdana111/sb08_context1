@@ -1,4 +1,4 @@
-import react, { useContext } from "react";
+import React, { useContext } from "react";
 import { UserContext } from "./UserContext";
 import { Link } from "react-router-dom";
 
@@ -18,6 +18,7 @@ const Home = () => {
       </nav>
       <h1>Home</h1>
       <div>{value}</div>
+      <button onClick={() => setValue('Hello from Home.')}>Set Value</button>
     </div>
   );
 };
