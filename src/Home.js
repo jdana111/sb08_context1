@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
-import "./App.css";
 
 const Home = () => (
   <div>
     <nav>
-      <Link to="/about">About</Link>
-      <Link to="/contact">Contact</Link>
+      <ul>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/contact">Contact</Link>
+        </li>
+      </ul>
     </nav>
     <h1>Home</h1>
   </div>
