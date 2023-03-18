@@ -3,7 +3,7 @@ import { UserContext } from "./UserContext";
 import { Link } from "react-router-dom";
 
 const Contact = () => {
-  const { value, setValue } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
   return (
     <div>
       <nav>
@@ -17,7 +17,7 @@ const Contact = () => {
         </ul>
       </nav>
       <h1>Contact</h1>
-      <div>{value}</div>
+      <pre>{JSON.stringify(user, null, 2)}</pre>
     </div>
   );
 };

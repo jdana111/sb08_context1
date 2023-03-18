@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { UserContext } from "./UserContext";
 import { Link } from "react-router-dom";
+import { login } from "./login";
 
 const Home = () => {
-  const { value, setValue } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
   return (
     <div>
       <nav>
@@ -17,8 +18,20 @@ const Home = () => {
         </ul>
       </nav>
       <h1>Home</h1>
-      <div>{value}</div>
-      <button onClick={() => setValue('Hello from Home.')}>Set Value</button>
+      {/* pre, async, await */}
+      <pre>{JSON.stringify(user, null, 2)}</pre>
+      {user ? (
+        <button onClick={() => setUser(null)}>Logout</button>
+      ) : (
+        <button
+          onClick={async () => {
+            const user = await login();
+            setUser(user);
+          }}
+        >
+          Login
+        </button>
+      )}
     </div>
   );
 };

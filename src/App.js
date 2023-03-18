@@ -6,11 +6,11 @@ import Contact from './Contact';
 import { UserContext } from './UserContext';
 
 function App() {
-  const [value, setValue] = useState('Hello from context via useState.')
-  const providerValue = useMemo(() => ({ value, setValue }), [value, setValue])
+  const [user, setUser] = useState(null)
+  const value = useMemo(() => ({ user, setUser }), [user, setUser])
   return (
     <div className="App">
-        <UserContext.Provider value={providerValue}>
+        <UserContext.Provider value={value}>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
